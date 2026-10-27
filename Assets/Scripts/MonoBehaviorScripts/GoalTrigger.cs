@@ -3,13 +3,13 @@ using UnityEngine;
 
 public class GoalTrigger : MonoBehaviour
 {
-    void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         PlayerMovement player = other.GetComponent<PlayerMovement>();
 
-        if (player != null)
+        if (player != null && GameManager.Instance != null)
         {
-            Debug.Log("You Win!");
+            GameManager.Instance.WinGame();
         }
     }
 }

@@ -1,37 +1,47 @@
+using System.Runtime.Serialization;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerMovement : MonoBehaviour
 {
-    public float speed = 5f;
+    [Header("Settings")]
+    [SerializeField]
+    private PlayerMovementSettings settings;
+    private Rigidbody2D _rb;
+    private Vector2 _mouvement;
 
-    private Rigidbody2D rb;
-    private Vector2 movement;
-
-    void Awake()
+    private void Awake()
     {
-        rb = GetComponent<Rigidbody2D>();
-        rb.gravityScale = 0f;
-        rb.freezeRotation = true;
+        _rb = GetComponent<Rigidbody2D>();
+        _rb.gravityScale = 0f;
+        _rb.freezeRotation = true;
     }
 
-    void Update()
+    private void Update()
     {
-        movement.x = Input.GetAxisRaw("Horizontal");
-        movement.y = Input.GetAxisRaw("Vertical");
+        _mouvement.x = Input.GetAxisRaw("Horizontal");
+        _mouvement.y = Input.GetAxisRaw("Vertical");
 
-        movement = movement.normalized;
+        _mouvement = Vector2.ClampMagnitude(_mouvement, 1f);
     }
 
-    void FixedUpdate()
+    private void FixedUpdate()
     {
-        rb.linearVelocity = movement * speed;
+        if(settings == null)
+        {
+            _rb.linearVelocity = Vector2.zero;
+            return;
+        }
+        _rb.linearVelocity = _mouvement * settings._speed;
     }
-  private void OnCollisionEnter2D(Collision2D other)
-{
-    if (other.gameObject.CompareTag("Enemy"))
+
+    private void OnCollisionEnter2D(Collision2D other)
     {
-        Debug.Log("You Lose!");
+        if (other.gameObject.CompareTag("Enemy") &&
+            GameManager.Instance != null)
+        {
+            GameManager.Instance.LoseGame();
+        }
     }
-}
+
 }

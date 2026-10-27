@@ -106,8 +106,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dee2ca9f6a96fd94994003cc717b1c92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMouvement
-  spawnPoint: {fileID: 0}
-  speed: 5
+  settings: {fileID: 11400000, guid: 227f58f983a06244cb562bcbb3b31552, type: 2}
 --- !u!50 &8528231424288702150
 Rigidbody2D:
   serializedVersion: 5

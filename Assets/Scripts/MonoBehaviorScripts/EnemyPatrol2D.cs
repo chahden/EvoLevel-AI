@@ -3,116 +3,103 @@ using UnityEngine;
 
 public class EnemyAutoPatrol2D : MonoBehaviour
 {
-    [Header("Patrol")]
-    public bool patrolEnabled = true;
-    public float speed = 2f;
+    [Header("Settings")]
+    [SerializeField] private EnemyPatrolSettings settings;
+    [SerializeField] private bool _patrolEnabled = true;
 
-    [Header("Patrol Area")]
-    public Vector2 areaSize = new Vector2(8f, 8f);
-    public Vector2 areaCenter;
+    private Vector2 _areaCenter;
+    private Vector2 _target;
+    private bool _hasTarget;
+    private float _waitTimer;
 
-    [Header("Destination")]
-    public float arrivalDistance = 0.15f;
-
-    [Header("Obstacle Detection")]
-    public LayerMask obstacleLayer;
-    public float detectionDistance = 0.5f;
-    public float waitBeforeNewTarget = 0.5f;
-
-    private Vector2 target;
-    private bool hasTarget;
-    private float waitTimer;
-
-    void Start()
+    private void Start()
     {
-        areaCenter = transform.position;
+        _areaCenter = transform.position;
         ChooseDestination();
     }
 
-    void Update()
+    private void Update()
     {
-        if (!patrolEnabled)
+        if (!_patrolEnabled || settings == null)return;
+
+        if (_waitTimer > 0f)
         {
-            return;
+            _waitTimer -= Time.deltaTime; return;
         }
 
-        if (waitTimer > 0f)
+        if (!_hasTarget)
         {
-            waitTimer -= Time.deltaTime;
-            return;
+            ChooseDestination();return;
         }
 
-        if (!hasTarget)
-        {
-            ChooseDestination();
-            return;
-        }
-
-        Vector2 direction =
-            (target - (Vector2)transform.position).normalized;
+        Vector2 position = transform.position;
+        Vector2 direction = (_target - position).normalized;
 
         RaycastHit2D hit = Physics2D.Raycast(
-            transform.position,
+            position,
             direction,
-            detectionDistance,
-            obstacleLayer
+            settings._detectionDistance,
+            settings._ObstacleLayer
         );
 
         if (hit.collider != null)
         {
-            hasTarget = false;
-            waitTimer = waitBeforeNewTarget;
-            return;
+            _hasTarget = false;
+            _waitTimer = settings._waitBeforNewTarget;return;
         }
 
         transform.position = Vector2.MoveTowards(
-            transform.position,
-            target,
-            speed * Time.deltaTime
+            position,
+            _target,
+            settings._speed * Time.deltaTime
         );
 
-        if (Vector2.Distance(transform.position, target)
-            < arrivalDistance)
+        if (Vector2.Distance(transform.position, _target)
+            <= settings._arricalDistance)
         {
             ChooseDestination();
         }
     }
 
-    void ChooseDestination()
+    private void ChooseDestination()
     {
-        float halfWidth = areaSize.x / 2f;
-        float halfHeight = areaSize.y / 2f;
+        if (settings == null)return;
 
-        target = new Vector2(
+        float halfWidth = settings._areaSize.x / 2f;
+        float halfHeight = settings._areaSize.y / 2f;
+
+        _target = new Vector2(
             Random.Range(
-                areaCenter.x - halfWidth,
-                areaCenter.x + halfWidth
+                _areaCenter.x - halfWidth,
+                _areaCenter.x + halfWidth
             ),
             Random.Range(
-                areaCenter.y - halfHeight,
-                areaCenter.y + halfHeight
+                _areaCenter.y - halfHeight,
+                _areaCenter.y + halfHeight
             )
         );
 
-        hasTarget = true;
+        _hasTarget = true;
     }
 
-    void OnDrawGizmosSelected()
+    private void OnDrawGizmosSelected()
     {
+        if (settings == null)return;
+
+        Vector2 center = Application.isPlaying
+            ? _areaCenter
+            : (Vector2)transform.position;
+
         Gizmos.color = Color.yellow;
+        Gizmos.DrawWireCube(center, settings._areaSize);
 
-        Gizmos.DrawWireCube(
-            new Vector3(areaCenter.x, areaCenter.y, 0f),
-            new Vector3(areaSize.x, areaSize.y, 0f)
-        );
-
-        if (hasTarget)
+        if (Application.isPlaying && _hasTarget)
         {
             Gizmos.color = Color.green;
-            Gizmos.DrawSphere(target, 0.15f);
+            Gizmos.DrawSphere(_target, 0.15f);
 
             Gizmos.color = Color.red;
-            Gizmos.DrawLine(transform.position, target);
+            Gizmos.DrawLine(transform.position, _target);
         }
     }
 }

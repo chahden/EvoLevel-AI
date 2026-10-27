@@ -1300,16 +1300,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df3a9b86cc60dfe419073891b7eba760, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyPatrol2D
-  patrolEnabled: 1
-  speed: 2
-  areaSize: {x: 8, y: 8}
-  areaCenter: {x: 0, y: 0}
-  arrivalDistance: 0.15
-  obstacleLayer:
-    serializedVersion: 2
-    m_Bits: 64
-  detectionDistance: 1
-  waitBeforeNewTarget: 0.1
+  settings: {fileID: 11400000, guid: 9969693b540bfb64eb21b96f7680f4b7, type: 2}
+  _patrolEnabled: 1
 --- !u!1 &814294767
 GameObject:
   m_ObjectHideFlags: 0
@@ -2169,6 +2161,50 @@ Transform:
   - {fileID: 2109237063}
   m_Father: {fileID: 1524400507}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1395482113
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1395482114}
+  - component: {fileID: 1395482115}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1395482114
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1395482113}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.30115, y: -0.00232, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1395482115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1395482113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8e7a4387c2c5e94a929faf37ac47878, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameManager
 --- !u!1 &1524400506
 GameObject:
   m_ObjectHideFlags: 0
@@ -2417,16 +2453,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df3a9b86cc60dfe419073891b7eba760, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyPatrol2D
-  patrolEnabled: 1
-  speed: 2
-  areaSize: {x: 8, y: 8}
-  areaCenter: {x: 0, y: 0}
-  arrivalDistance: 0.15
-  obstacleLayer:
-    serializedVersion: 2
-    m_Bits: 64
-  detectionDistance: 0.5
-  waitBeforeNewTarget: 0.5
+  settings: {fileID: 11400000, guid: 9969693b540bfb64eb21b96f7680f4b7, type: 2}
+  _patrolEnabled: 1
 --- !u!1 &1586277347
 GameObject:
   m_ObjectHideFlags: 0
@@ -3070,3 +3098,4 @@ SceneRoots:
   - {fileID: 1855005624}
   - {fileID: 934362320}
   - {fileID: 242744334}
+  - {fileID: 1395482114}
