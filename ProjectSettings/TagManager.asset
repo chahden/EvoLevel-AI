@@ -48,17 +48,20 @@ TagManager:
   - name: Wall
     uniqueID: 3145082645
     locked: 0
+  - name: GridCell
+    uniqueID: 1262237925
+    locked: 0
+  - name: Player
+    uniqueID: 3993920957
+    locked: 0
+  - name: Enemy
+    uniqueID: 521783629
+    locked: 0
   - name: Obstacle
     uniqueID: 2904002831
     locked: 0
   - name: Stand
     uniqueID: 4030852241
-    locked: 0
-  - name: Enemy
-    uniqueID: 521783629
-    locked: 0
-  - name: Player
-    uniqueID: 3993920957
     locked: 0
   m_RenderingLayers:
   - Default
