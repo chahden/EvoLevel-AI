@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 3
   tags:
   - Enemy
+  - Obstacle
+  - MazeWall
   layers:
   - Default
   - TransparentFX
