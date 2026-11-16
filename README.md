@@ -8,7 +8,7 @@
 
 <p align="center">   <img src="Documentation/GIFs/gameplay.gif" width="650" alt="EvoLevel AI Gameplay"> \</p>
 
-<p align="center">   \<i>What if every level could adapt to the way you play?\</i> \</p>
+<p align="center">   <i>What if every level could adapt to the way you play?</i> </p>
 
 ---
 
