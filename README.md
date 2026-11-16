@@ -1,14 +1,14 @@
 # 🧩 EvoLevel AI
 
-\<h1 align="center">
+<h1 align="center">
  EvoLevel AI
-\</h1>
+</h1>
 
-\<h3 align="center">   Procedural Level Generation • Game AI • Adaptive Gameplay \</h3>
+<h3 align="center">   Procedural Level Generation • Game AI • Adaptive Gameplay \</h3>
 
-\<p align="center">   \<img src="Documentation/GIFs/gameplay.gif" width="650" alt="EvoLevel AI Gameplay"> \</p>
+<p align="center">   \<img src="Documentation/GIFs/gameplay.gif" width="650" alt="EvoLevel AI Gameplay"> \</p>
 
-\<p align="center">   \<i>What if every level could adapt to the way you play?\</i> \</p>
+<p align="center">   \<i>What if every level could adapt to the way you play?\</i> \</p>
 
 ---
 
@@ -24,10 +24,10 @@ The goal is to experiment with the relationship between **procedural generation,
 
 ### ✨ Project Highlights
 
-\<p align="center">
-&#x20; \<img src="Documentation/GIFs/maze-generation.gif" width="48%" alt="Maze Generation">
-&#x20; \<img src="Documentation/GIFs/maze-reveal.gif" width="48%" alt="Maze Reveal Animation">
-\</p>
+<p align="center">
+&#x20; <img src="Documentation/GIFs/maze-generation.gif" width="48%" alt="Maze Generation">
+&#x20; <img src="Documentation/GIFs/maze-reveal.gif" width="48%" alt="Maze Reveal Animation">
+</p>
 
 - 🧩 **Procedural Maze Generation** — Generate maze layouts using Depth-First Search (DFS).
 - 🗺️ **Grid-Based System** — Build levels using a structured grid.
@@ -39,9 +39,9 @@ The goal is to experiment with the relationship between **procedural generation,
 
 ### 🛠️ Built With
 
-\<p align="left">
+<p align="left">
 &#x20; \<img src="[https://skillicons.dev/icons?i=unity,cs,git,github](https://skillicons.dev/icons?i=unity,cs,git,github)" />
-\</p>
+</p>
 
 - **Engine:** Unity
 - **Language:** C#
@@ -52,7 +52,7 @@ The goal is to experiment with the relationship between **procedural generation,
 
 ### 🚧 Development Status
 
-\<text>Work in progress — new systems and improvements are being developed.\</text>
+<text>Work in progress — new systems and improvements are being developed.\</text>
 
 ---
 
