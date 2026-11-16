@@ -37,10 +37,38 @@ The goal is to experiment with the relationship between **procedural generation,
 
 ---
 
+### 📊 GitHub Stats & Activity
+
+<p align="center">
+  <!-- Overall GitHub Stats (includes total lifetime commits, PRs, issues, etc.) -->
+  <a href="https://github.com/YOUR_USERNAME">
+    <img src="https://github-readme-stats.vercel.app/api?username=YOUR_USERNAME&show_icons=true&include_all_commits=true&theme=radical" alt="GitHub Stats" />
+  </a>
+  <!-- Top Languages Used Across Repositories -->
+  <a href="https://github.com/YOUR_USERNAME">
+    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=YOUR_USERNAME&layout=compact&theme=radical" alt="Top Languages" />
+  </a>
+</p>
+
+<p align="center">
+  <!-- Repository Specific Pinned Card & Commit Activity Badge -->
+  <a href="https://github.com/YOUR_USERNAME/EvoLevel-AI">
+    <img src="https://github-readme-stats.vercel.app/api/pin/?username=YOUR_USERNAME&repo=EvoLevel-AI&theme=radical" alt="EvoLevel AI Repo" />
+  </a>
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/github/last-commit/YOUR_USERNAME/EvoLevel-AI" alt="Last Commit" />
+  <img src="https://img.shields.io/github/repo-size/YOUR_USERNAME/EvoLevel-AI" alt="Repo Size" />
+  <img src="https://img.shields.io/github/languages/count/YOUR_USERNAME/EvoLevel-AI" alt="Language Count" />
+</p>
+
+---
+
 ### 🛠️ Built With
 
 <p align="left">
-&#x20; <img src="[https://skillicons.dev/icons?i=unity,cs,git,github](https://skillicons.dev/icons?i=unity,cs,git,github)" />
+&#x20; <img src="https://skillicons.dev/icons?i=unity,cs,git,github" />
 </p>
 
 - **Engine:** Unity
