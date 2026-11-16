@@ -45,9 +45,6 @@ The goal is to experiment with the relationship between **procedural generation,
 
 ## 📊 GitHub Activity & Stats
 
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=chahden&show_icons=true&include_all_commits=true&theme=radical" alt="GitHub Stats" />
-</p>
 
 <p align="center">
   <img src="https://streak-stats.demolab.com/?user=chahden&theme=radical" alt="GitHub Streak" />
