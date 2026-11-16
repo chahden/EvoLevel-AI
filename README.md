@@ -1,7 +1,7 @@
 # 🧩 EvoLevel AI
 
 \<h1 align="center">
-&#x20; EvoLevel AI
+ EvoLevel AI
 \</h1>
 
 \<h3 align="center">   Procedural Level Generation • Game AI • Adaptive Gameplay \</h3>
