@@ -50,11 +50,6 @@ The goal is to experiment with the relationship between **procedural generation,
   <img src="https://streak-stats.demolab.com/?user=chahden&theme=radical" alt="GitHub Streak" />
 </p>
 
-<p align="center">
-  <a href="https://github.com/chahden/EvoLevel-AI">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=chahden&repo=EvoLevel-AI&theme=radical" alt="EvoLevel AI Repository" />
-  </a>
-</p>
 
 <p align="center">
   <img src="https://img.shields.io/github/last-commit/chahden/EvoLevel-AI" alt="Last Commit" />
