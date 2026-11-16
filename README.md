@@ -61,4 +61,3 @@ The goal is to experiment with the relationship between **procedural generation,
 **Mouhamed Amine Chehoudi**
 
 Game Development Student | Unity & C# | Interested in Game AI
-
