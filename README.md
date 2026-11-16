@@ -64,7 +64,6 @@ The goal is to experiment with the relationship between **procedural generation,
   <img src="https://img.shields.io/github/repo-size/chahden/EvoLevel-AI" alt="Repo Size" />
   <img src="https://img.shields.io/github/languages/count/chahden/EvoLevel-AI" alt="Language Count" />
 </p>
-
 ---
 
 ### 🛠️ Built With
