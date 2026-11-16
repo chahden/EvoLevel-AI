@@ -37,10 +37,10 @@ The goal is to experiment with the relationship between **procedural generation,
 
 ---
 
-## 📊 GitHub Activity
+## 📊 GitHub Activity & Stats
 
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=chahden&show_icons=true&theme=radical" alt="GitHub Stats" />
+  <img src="https://github-readme-stats.vercel.app/api?username=chahden&show_icons=true&include_all_commits=true&theme=radical" alt="GitHub Stats" />
 </p>
 
 <p align="center">
@@ -50,17 +50,18 @@ The goal is to experiment with the relationship between **procedural generation,
 <p align="center">
   <img src="https://github-readme-activity-graph.vercel.app/graph?username=chahden&theme=react-dark&hide_border=true" alt="GitHub Activity Graph" />
 </p>
+
 <p align="center">
-  <!-- Repository Specific Pinned Card & Commit Activity Badge -->
-  <a href="https://github.com/YOUR_USERNAME/EvoLevel-AI">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=YOUR_USERNAME&repo=EvoLevel-AI&theme=radical" alt="EvoLevel AI Repo" />
+  <!-- Repository Specific Pinned Card -->
+  <a href="https://github.com/chahden/EvoLevel-AI">
+    <img src="https://github-readme-stats.vercel.app/api/pin/?username=chahden&repo=EvoLevel-AI&theme=radical" alt="EvoLevel AI Repo" />
   </a>
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/github/last-commit/YOUR_USERNAME/EvoLevel-AI" alt="Last Commit" />
-  <img src="https://img.shields.io/github/repo-size/YOUR_USERNAME/EvoLevel-AI" alt="Repo Size" />
-  <img src="https://img.shields.io/github/languages/count/YOUR_USERNAME/EvoLevel-AI" alt="Language Count" />
+  <img src="https://img.shields.io/github/last-commit/chahden/EvoLevel-AI" alt="Last Commit" />
+  <img src="https://img.shields.io/github/repo-size/chahden/EvoLevel-AI" alt="Repo Size" />
+  <img src="https://img.shields.io/github/languages/count/chahden/EvoLevel-AI" alt="Language Count" />
 </p>
 
 ---
