@@ -1,14 +1,20 @@
 # 🧩 EvoLevel AI
 
 <h1 align="center">
- EvoLevel AI
+  EvoLevel AI
 </h1>
 
-<h3 align="center">   Procedural Level Generation • Game AI • Adaptive Gameplay </h3>
+<h3 align="center">
+  Procedural Level Generation • Game AI • Adaptive Gameplay
+</h3>
 
-<p align="center">   <img src="Documentation/GIFs/gameplay.gif" width="650" alt="EvoLevel AI Gameplay"> </p>
+<p align="center">
+  <img src="Documentation/GIFs/gameplay.gif" width="650" alt="EvoLevel AI Gameplay">
+</p>
 
-<p align="center">   <i>What if every level could adapt to the way you play?</i> </p>
+<p align="center">
+  <i>What if every level could adapt to the way you play?</i>
+</p>
 
 ---
 
@@ -25,8 +31,8 @@ The goal is to experiment with the relationship between **procedural generation,
 ### ✨ Project Highlights
 
 <p align="center">
-&#x20; <img src="Documentation/GIFs/maze-generation.gif" width="48%" alt="Maze Generation">
-&#x20; <img src="Documentation/GIFs/maze-reveal.gif" width="48%" alt="Maze Reveal Animation">
+  <img src="Documentation/GIFs/maze-generation.gif" width="48%" alt="Maze Generation">
+  <img src="Documentation/GIFs/maze-reveal.gif" width="48%" alt="Maze Reveal Animation">
 </p>
 
 - 🧩 **Procedural Maze Generation** — Generate maze layouts using Depth-First Search (DFS).
@@ -48,13 +54,8 @@ The goal is to experiment with the relationship between **procedural generation,
 </p>
 
 <p align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=chahden&theme=react-dark&hide_border=true" alt="GitHub Activity Graph" />
-</p>
-
-<p align="center">
-  <!-- Repository Specific Pinned Card -->
   <a href="https://github.com/chahden/EvoLevel-AI">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=chahden&repo=EvoLevel-AI&theme=radical" alt="EvoLevel AI Repo" />
+    <img src="https://github-readme-stats.vercel.app/api/pin/?username=chahden&repo=EvoLevel-AI&theme=radical" alt="EvoLevel AI Repository" />
   </a>
 </p>
 
@@ -69,7 +70,7 @@ The goal is to experiment with the relationship between **procedural generation,
 ### 🛠️ Built With
 
 <p align="left">
-&#x20; <img src="https://skillicons.dev/icons?i=unity,cs,git,github" />
+  <img src="https://skillicons.dev/icons?i=unity,cs,git,github" alt="Unity, C#, Git, GitHub" />
 </p>
 
 - **Engine:** Unity
@@ -81,7 +82,7 @@ The goal is to experiment with the relationship between **procedural generation,
 
 ### 🚧 Development Status
 
-<text>Work in progress — new systems and improvements are being developed.</text>
+Work in progress — new systems and improvements are being developed.
 
 ---
 
