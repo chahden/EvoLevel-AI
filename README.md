@@ -56,14 +56,7 @@ The goal is to experiment with the relationship between **procedural generation,
   <img src="https://img.shields.io/github/repo-size/chahden/EvoLevel-AI" alt="Repo Size" />
   <img src="https://img.shields.io/github/languages/count/chahden/EvoLevel-AI" alt="Language Count" />
 </p>
-<p align="center">
-  <a href="https://github.com/chahden/EvoLevel-AI">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=chahden&amp;repo=EvoLevel-AI&amp;theme=radical" alt="EvoLevel AI repository card">
-  </a>
-</p>
 
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=chahden&amp;show_icons=true&amp;theme=radical" alt="GitHub stats for chahden">
 </p>
 ---
 
