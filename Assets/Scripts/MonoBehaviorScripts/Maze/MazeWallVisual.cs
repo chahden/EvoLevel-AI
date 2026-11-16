@@ -1,16 +1,24 @@
 
 using UnityEngine;
 
+/// <summary>
+/// Manages the visual appearance of maze walls
+/// by configuring their glow, edge, and body sprite layers.
+/// </summary>
 public class MazeWallVisual : MonoBehaviour
 {
     #region Inspector Fields
 
     [Header("Visual References")]
 
-    [SerializeField] private SpriteRenderer glow;
-    [SerializeField] private SpriteRenderer edge;
-    [SerializeField] private SpriteRenderer body;
+    [Tooltip("Sprite renderer used for the outer glow layer.")]
+    [SerializeField] private SpriteRenderer _glow;
 
+    [Tooltip("Sprite renderer used for the outer edge layer.")]
+    [SerializeField] private SpriteRenderer _edge;
+
+    [Tooltip("Sprite renderer used for the inner body layer.")]
+    [SerializeField] private SpriteRenderer _body;
 
     [Header("Visual Dimensions")]
 
@@ -22,123 +30,172 @@ public class MazeWallVisual : MonoBehaviour
 
     #endregion
 
-
     #region Initialization
 
     private void Awake()
     {
-        if (glow == null)
+        // Automatically find visual layers if they were not assigned in the Inspector.
+        if (_glow == null)
         {
-            glow = FindLayer("Glow");
+            _glow = FindLayer("Glow");
         }
 
-        if (edge == null)
+        if (_edge == null)
         {
-            edge = FindLayer("Edge");
+            _edge = FindLayer("Edge");
         }
 
-        if (body == null)
+        if (_body == null)
         {
-            body = FindLayer("Body");
+            _body = FindLayer("Body");
         }
     }
 
     #endregion
 
-
     #region Visual Configuration
 
+    /// <summary>
+    /// Adjusts the dimensions of each visual layer
+    /// according to the wall's current scale.
+    /// </summary>
     public void Apply()
     {
-        float wallLength = transform.localScale.x;
-        float wallThickness = transform.localScale.y;
+        float _wallLength = transform.localScale.x;
+        float _wallThickness = transform.localScale.y;
 
-        float border = Mathf.Min(
+        // Prevent the border from becoming too thick compared to the wall.
+        float _border = Mathf.Min(
             edgeWidth,
-            wallThickness * 0.35f
+            _wallThickness * 0.35f
         );
 
-        // Glow: largest layer.
+        // Glow: largest layer, extending beyond the wall.
         Fit(
-            glow,
-            wallLength + (2f * glowWidth),
-            wallThickness + (2f * glowWidth)
+            _glow,
+            _wallLength + (2f * glowWidth),
+            _wallThickness + (2f * glowWidth)
         );
 
-        // Edge: outer cyan border.
+        // Edge: outer cyan border matching the wall dimensions.
         Fit(
-            edge,
-            wallLength,
-            wallThickness
+            _edge,
+            _wallLength,
+            _wallThickness
         );
 
-        // Body: smaller inner layer.
+        // Body: smaller inner layer, leaving space for the border.
         Fit(
-            body,
-            wallLength - (2f * border),
-            wallThickness - (2f * border)
+            _body,
+            _wallLength - (2f * _border),
+            _wallThickness - (2f * _border)
         );
     }
 
-
+    /// <summary>
+    /// Resizes a sprite renderer so its visual dimensions
+    /// match the requested world-space width and height.
+    /// </summary>
     private void Fit(
-        SpriteRenderer spriteRenderer,
-        float worldWidth,
-        float worldHeight
+        SpriteRenderer _spriteRenderer,
+        float _worldWidth,
+        float _worldHeight
     )
     {
-        if (spriteRenderer == null)
+        if (_spriteRenderer == null)
         {
             return;
         }
 
-        if (spriteRenderer.sprite == null)
+        if (_spriteRenderer.sprite == null)
         {
             Debug.LogWarning(
-                spriteRenderer.name + " has no Sprite assigned!",
-                spriteRenderer
+                _spriteRenderer.name + " has no Sprite assigned!",
+                _spriteRenderer
             );
 
             return;
         }
 
-        Vector2 spriteSize = spriteRenderer.sprite.bounds.size;
+        // Retrieve the original dimensions of the assigned sprite.
+        Vector2 _spriteSize = _spriteRenderer.sprite.bounds.size;
 
-        Vector3 rootScale = transform.localScale;
+        Vector3 _rootScale = transform.localScale;
 
-        Transform childTransform = spriteRenderer.transform;
+        Transform _childTransform = _spriteRenderer.transform;
 
-        childTransform.localPosition = Vector3.zero;
-        childTransform.localRotation = Quaternion.identity;
+        // Reset the child transform so its size is calculated consistently.
+        _childTransform.localPosition = Vector3.zero;
+        _childTransform.localRotation = Quaternion.identity;
 
-        childTransform.localScale = new Vector3(
-            worldWidth / (rootScale.x * spriteSize.x),
-            worldHeight / (rootScale.y * spriteSize.y),
+        // Calculate the local scale needed to achieve the requested world dimensions.
+        _childTransform.localScale = new Vector3(
+            _worldWidth / (_rootScale.x * _spriteSize.x),
+            _worldHeight / (_rootScale.y * _spriteSize.y),
             1f
         );
     }
 
     #endregion
 
-
     #region Helper Methods
 
-    private SpriteRenderer FindLayer(string layerName)
+    /// <summary>
+    /// Finds a visual layer by its child object name
+    /// and retrieves its SpriteRenderer component.
+    /// </summary>
+    private SpriteRenderer FindLayer(string _layerName)
     {
-        Transform child = transform.Find(layerName);
+        Transform _child = transform.Find(_layerName);
 
-        if (child == null)
+        if (_child == null)
         {
             Debug.LogWarning(
-                "Could not find " + layerName + " inside MazeWall!",
+                "Could not find " + _layerName + " inside MazeWall!",
                 this
             );
 
             return null;
         }
 
-        return child.GetComponent<SpriteRenderer>();
+        return _child.GetComponent<SpriteRenderer>();
     }
 
     #endregion
 }
+
+/// <summary>
+/// ARCHITECTURAL OVERVIEW
+///
+/// The Visual Controller: MazeWallVisual
+/// Manages the appearance of an individual maze wall
+/// using three visual layers: Glow, Edge, and Body.
+///
+/// The Initialization Pipeline: Awake
+/// Checks whether the visual references have been assigned
+/// through the Inspector. If a reference is missing,
+/// FindLayer attempts to retrieve it from the wall's children.
+///
+/// The Visual Configuration Pipeline: Apply
+/// Reads the wall's dimensions and calculates the appropriate
+/// dimensions for each visual layer.
+///
+/// The Visual Layers:
+/// Glow represents the outer visual effect and extends beyond the wall.
+/// Edge represents the outer border of the wall.
+/// Body represents the smaller inner section of the wall.
+///
+/// The Scaling Pipeline: Fit
+/// Calculates the required local scale of each SpriteRenderer
+/// using its original sprite dimensions and the root wall scale.
+/// This allows the visual layers to match the requested
+/// world-space dimensions.
+///
+/// The Helper Method: FindLayer
+/// Searches for a child object using its name
+/// and retrieves its SpriteRenderer component.
+///
+/// The Configuration Relationship:
+/// MazeGenerator creates the wall GameObject and calls Apply()
+/// to configure its visual layers according to the wall dimensions.
+/// </summary>

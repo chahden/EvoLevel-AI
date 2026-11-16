@@ -1,5 +1,11 @@
-
 using UnityEngine;
+
+
+/// <summary>
+/// Prepares the runtime level configuration from the default settings,
+/// validates it, and initializes the GridManager.
+/// </summary>
+/// 
 
 public class LevelGenerator : MonoBehaviour
 {
@@ -19,6 +25,10 @@ public class LevelGenerator : MonoBehaviour
 
     private LevelConfiguration _currentConfiguration;
 
+    /// <summary>
+    /// Gets the runtime configuration of the current level.
+    /// </summary>
+    /// 
     public LevelConfiguration CurrentConfiguration
     {
         get { return _currentConfiguration; }
@@ -28,6 +38,10 @@ public class LevelGenerator : MonoBehaviour
 
     #region Unity Lifecycle
 
+    /// <summary>
+    /// Starts the level configuration preparation process.
+    /// </summary>
+
     public void InitializeLevel()
     {
         PrepareLevelConfiguration();
@@ -36,6 +50,11 @@ public class LevelGenerator : MonoBehaviour
     #endregion
 
     #region Configuration Preparation
+    
+    /// <summary>
+    /// Reads the default settings, creates and validates the runtime
+    /// configuration, then initializes the GridManager.
+    /// </summary>
 
     private void PrepareLevelConfiguration()
     {
@@ -59,7 +78,6 @@ public class LevelGenerator : MonoBehaviour
             return;
         }
 
-        // Read default values from the settings asset.
         int _width = _levelSettings.Width;
         int _height = _levelSettings.Height;
         float _cellSize = _levelSettings.CellSize;
@@ -67,7 +85,6 @@ public class LevelGenerator : MonoBehaviour
         Vector2Int _startCell = _levelSettings.DefaultPosition;
         Vector2Int _goalCell = _levelSettings.DefaultGoalCell;
 
-        // Create the runtime configuration.
         _currentConfiguration = new LevelConfiguration(
             _width,
             _height,
@@ -76,7 +93,6 @@ public class LevelGenerator : MonoBehaviour
             _goalCell
         );
 
-        // Validate the configuration.
         bool _isValid = LevelConfigValidator.Validate(
             _currentConfiguration,
             out string _errorMessage
@@ -93,7 +109,6 @@ public class LevelGenerator : MonoBehaviour
             return;
         }
 
-        // Initialize GridManager using the validated configuration.
         bool _isGridInitialized = _gridManager.Initialize(
             _currentConfiguration
         );
@@ -117,3 +132,27 @@ public class LevelGenerator : MonoBehaviour
 
     #endregion
 }
+/// <summary>
+/// ARCHITECTURAL OVERVIEW
+///
+/// The Data Source: LevelSettings
+/// Stores the default level parameters, including grid dimensions,
+/// cell size, starting position, and goal position.
+///
+/// The Logic Hub: LevelGenerator
+/// Retrieves the default parameters, creates the runtime configuration,
+/// validates it, and coordinates the GridManager initialization.
+///
+/// The Runtime Data: LevelConfiguration
+/// Holds the configuration values used by the current level.
+/// It separates runtime level data from the original settings asset.
+///
+/// The Validation Pipeline: LevelConfigValidator
+/// Checks whether the runtime configuration contains valid parameters
+/// before it is used by the grid system.
+///
+/// The Initialization Pipeline: GridManager
+/// Receives the validated configuration and initializes the grid
+/// dimensions and coordinate system.
+/// </summary>
+
