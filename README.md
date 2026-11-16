@@ -4,9 +4,9 @@
  EvoLevel AI
 </h1>
 
-<h3 align="center">   Procedural Level Generation • Game AI • Adaptive Gameplay \</h3>
+<h3 align="center">   Procedural Level Generation • Game AI • Adaptive Gameplay </h3>
 
-<p align="center">   \<img src="Documentation/GIFs/gameplay.gif" width="650" alt="EvoLevel AI Gameplay"> \</p>
+<p align="center">   <img src="Documentation/GIFs/gameplay.gif" width="650" alt="EvoLevel AI Gameplay"> \</p>
 
 <p align="center">   \<i>What if every level could adapt to the way you play?\</i> \</p>
 
@@ -40,7 +40,7 @@ The goal is to experiment with the relationship between **procedural generation,
 ### 🛠️ Built With
 
 <p align="left">
-&#x20; \<img src="[https://skillicons.dev/icons?i=unity,cs,git,github](https://skillicons.dev/icons?i=unity,cs,git,github)" />
+&#x20; <img src="[https://skillicons.dev/icons?i=unity,cs,git,github](https://skillicons.dev/icons?i=unity,cs,git,github)" />
 </p>
 
 - **Engine:** Unity
@@ -52,7 +52,7 @@ The goal is to experiment with the relationship between **procedural generation,
 
 ### 🚧 Development Status
 
-<text>Work in progress — new systems and improvements are being developed.\</text>
+<text>Work in progress — new systems and improvements are being developed.</text>
 
 ---
 
