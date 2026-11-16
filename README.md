@@ -6,7 +6,7 @@
 
 <h3 align="center">   Procedural Level Generation • Game AI • Adaptive Gameplay </h3>
 
-<p align="center">   <img src="Documentation/GIFs/gameplay.gif" width="650" alt="EvoLevel AI Gameplay"> \</p>
+<p align="center">   <img src="Documentation/GIFs/gameplay.gif" width="650" alt="EvoLevel AI Gameplay"> </p>
 
 <p align="center">   <i>What if every level could adapt to the way you play?</i> </p>
 
