@@ -37,19 +37,19 @@ The goal is to experiment with the relationship between **procedural generation,
 
 ---
 
-### 📊 GitHub Stats & Activity
+## 📊 GitHub Activity
 
 <p align="center">
-  <!-- Overall GitHub Stats (includes total lifetime commits, PRs, issues, etc.) -->
-  <a href="https://github.com/YOUR_USERNAME">
-    <img src="https://github-readme-stats.vercel.app/api?username=YOUR_USERNAME&show_icons=true&include_all_commits=true&theme=radical" alt="GitHub Stats" />
-  </a>
-  <!-- Top Languages Used Across Repositories -->
-  <a href="https://github.com/YOUR_USERNAME">
-    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=YOUR_USERNAME&layout=compact&theme=radical" alt="Top Languages" />
-  </a>
+  <img src="https://github-readme-stats.vercel.app/api?username=chahden&show_icons=true&theme=radical" alt="GitHub Stats" />
 </p>
 
+<p align="center">
+  <img src="https://streak-stats.demolab.com/?user=chahden&theme=radical" alt="GitHub Streak" />
+</p>
+
+<p align="center">
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=chahden&theme=react-dark&hide_border=true" alt="GitHub Activity Graph" />
+</p>
 <p align="center">
   <!-- Repository Specific Pinned Card & Commit Activity Badge -->
   <a href="https://github.com/YOUR_USERNAME/EvoLevel-AI">
